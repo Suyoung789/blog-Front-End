@@ -1,9 +1,9 @@
 <template>
 <div class="list-container">
-  <div class="post-list" v-for="post in posts" v-bind:key="post.key">
+  <div class="post-list" v-for="post in posts" v-bind:key="post.key" >
     <img :src="`http://54.180.79.49/${post.image}`" class="post-img">
     <div class="post-container" >
-      <div class="post-title"><p class="text-title">{{ post.title }}</p></div>
+      <div class="post-title" v-on:click="redirect(post.post_id)"><p class="text-title">{{ post.title }}</p></div>
       <div class="content-container">
         <p class="post-content">{{ post.content }}</p>
         <div class="meta-container">
@@ -31,7 +31,7 @@ export default {
     }
   },
   created: function () {
-    this.$EventBus.$on('category', function (category) {
+    this.$EventBus.$on('category', (category) => {
       this.isAll = !this.isAll
       this.category = category
       if (this.isAll === false) {
@@ -51,6 +51,12 @@ export default {
         })
       }
     })
+    this.$http.get('/post', {params: {category: 'All'}}).then((result) => {
+      this.posts = result.data
+      console.log(result.data)
+    }).catch(function (error) {
+      console.log(error)
+    })
   },
   methods: {
     tmp: function () {
@@ -58,6 +64,9 @@ export default {
     },
     formatDate: function (date) {
       return moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')
+    },
+    redirect: function (id) {
+      this.$router.push('post/' + id)
     }
   }
 }

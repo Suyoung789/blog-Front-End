@@ -15,14 +15,15 @@ export default new Router({
       component: Main
     },
     {
+      path: '/post/:id',
+      name: PostDetail,
+      component: PostDetail,
+      props: true
+    },
+    {
       path: '/writing',
       name: 'Writing',
       component: Writing
-    },
-    {
-      path: '/detail',
-      name: PostDetail,
-      component: PostDetail
     },
     {
       path: '/intro',

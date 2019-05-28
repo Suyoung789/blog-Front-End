@@ -1,6 +1,6 @@
 <template>
   <div>
-    <multiselect :options="options.category_name" v-model="value">
+    <multiselect :options="this.options" v-model="value" v-on:input="clickoption">
     </multiselect>
   </div>
 </template>
@@ -14,16 +14,21 @@ export default {
   data () {
     return {
       options: [],
-      value: ''
+      value: null
     }
   },
   created: function () {
-    this.$http.get('/category').then((result) => {
-      console.log(result.data)
+    this.$http.get('/option').then((result) => {
       this.options = result.data
+      console.log(this.options)
     }).catch(function (error) {
       console.log(error)
     })
+  },
+  methods: {
+    clickoption: function (value, id) {
+      this.$emit('clicked', value)
+    }
   }
 }
 </script>

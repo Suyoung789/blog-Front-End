@@ -1,18 +1,18 @@
 <template>
   <div>
     <post-detail-body />
-    <comment />
+    <!-- <comment /> -->
   </div>
 </template>
 
 <script>
 import PostDetailBody from '../components/PostDetailBody'
-import Comment from '../components/Comment'
+// import Comment from '../components/Comment'
 export default {
   name: 'PostDetail',
   components: {
-    PostDetailBody,
-    Comment
+    PostDetailBody
+    // Comment
   }
 }
 </script>

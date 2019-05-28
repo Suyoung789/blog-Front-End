@@ -16,7 +16,10 @@
 
 <script>
 export default {
-  name: 'Comment'
+  name: 'Comment',
+  created: function () {
+    this.$http
+  }
 }
 </script>
 

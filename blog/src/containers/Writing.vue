@@ -1,14 +1,14 @@
 <template>
   <div class="writing-container">
-    <div class="title-container"><input class="title" type="text" placeholder="Title">
-      <multi-select class="select"/>
+    <div class="title-container"><input class="title" type="text" placeholder="Title" v-model="title">
+      <multi-select class="select" v-on:clicked="log" />
     </div>
     <div class="writing">
       <editor v-model="editorText" height="80vh" class="editor" />
       <viewer :value="editorText" class="viewer"/>
     </div>
     <div class="button-container">
-      <input type="button" class="button" value="저장">
+      <input type="button" class="button" value="저장" v-on:click="savePost">
     </div>
   </div>
 </template>
@@ -29,13 +29,32 @@ export default {
   },
   data () {
     return {
-      editorText: ''
+      editorText: '',
+      title: '',
+      value: ''
+    }
+  },
+  methods: {
+    savePost: function () {
+      console.log(this.value)
+      this.$http.post('/post', JSON.stringify({title: this.title, content: this.editorText, category: this.value}), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (result) {
+        console.log(result.data)
+      }).catch(function (error) {
+        console.log(error)
+      })
+    },
+    log: function (value) {
+      this.value = value
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .writing-container {
   display: flex;
   flex-direction: column;

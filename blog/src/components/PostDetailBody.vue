@@ -5,95 +5,59 @@
         <img src="../assets/profile.png" class="small-profile">
         <div class="intro-wrapper">
           <p class="small-name">류수영</p>
-          <p class="small-intro">안녕하세요 대덕소프트웨어 마이스터고 개발과 2학년에 재학중인 류수영입니다.<br />Python과 백엔드 개발에 관심이 있습니다. 백엔드 개발자가 꿈입니당</p>
+          <p class="small-intro">안녕하세요. 학생 개발자입니다.</p>
         </div>
       </div>
     </div>
-    <div class="title-container">
-      <div class="title-wrapper">
-        <div class="heart-wrapper">
-          <img src="../assets/heart.png" class="big-heart">
-          <div class="count">256</div>
+    <div class="all-wrapper">
+      <div class="title-container">
+        <div class="title-wrapper">
+          <div class="heart-wrapper">
+            <img src="../assets/heart.png" class="big-heart">
+            <div class="count">256</div>
+          </div>
+          <div class="title"><p>{{ this.info.title }}</p></div>
         </div>
-        <div class="title">디자인은 어려워요</div>
       </div>
-    </div>
-    <div class="wrapper-wrapper">
-      <div class="meta-wrapper">
-        <div class="date">2019.01.21</div>
-        <div class="category">python</div>
-      </div>
-    </div>
-    <div class="detail-wrapper">
-      <div class="detail-body">
-        <img src="../assets/img-example.png" class="post-img">
-          <div class="post-content">\여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-            딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-            </div>
+      <div class="wrapper-wrapper">
+        <div class="meta-wrapper">
+          <div class="date"><p>{{ formatDate(this.info.creation_time) }}</p></div>
+          <div class="category"><p>{{ this.info.category }}</p></div>
         </div>
       </div>
       <div class="detail-wrapper">
-      <div class="detail-body">
-        <img src="../assets/img-example.png" class="post-img">
-          <div class="post-content">\여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-            딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-            </div>
-        </div>
-      </div>
-      <div class="detail-wrapper">
-      <div class="detail-body">
-        <img src="../assets/img-example.png" class="post-img">
-          <div class="post-content">\여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-            딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-            </div>
-        </div>
-      </div>
-      <div class="detail-wrapper">
-      <div class="detail-body">
-        <img src="../assets/img-example.png" class="post-img">
-          <div class="post-content">\여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-            딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-              \여기는 포스트 부분 이건 줄글임. 가운데 정렬할까 왼쪽 정렬할까 뭐가 더 좋을까?? 일단 이렇게 갈거임.. 줄글은 어디까지 하냐면 여기까지 왜냐면 맞춰야 기분이 좋아....
-              딱 저기 날짜 있는데 까지임ㅇㅇ
-            </div>
+        <div class="detail-body">
+          <img v-for="image in this.info.images" v-bind:key="image.key" :src="`http://54.180.79.49/${image}`" class="post-img">
+            <div class="post-content"><vue-markdown-it :source="this.info.content" /></div>
+          </div>
         </div>
       </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
+import VueMarkdownIt from 'vue-markdown-it'
 export default {
-  name: 'PostDetailBody'
+  name: 'PostDetailBody',
+  components: { VueMarkdownIt },
+  data () {
+    return {
+      info: {}
+    }
+  },
+  created: function () {
+    this.$http.get('/post/' + this.$route.params.id).then((result) => {
+      console.log(this.$route.params.id)
+      this.info = result.data
+      console.log(this.info)
+    })
+  },
+  methods: {
+    formatDate: function (date) {
+      return moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')
+    }
+  }
 }
 </script>
 
@@ -161,8 +125,7 @@ export default {
   flex-direction: column;
 }
 .big-heart {
-  width: 30%;
-  height: 100%;
+  width: 50%;
 }
 .count {
   font-size: 6px;
