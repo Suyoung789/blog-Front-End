@@ -14,7 +14,7 @@
         <div class="title-wrapper">
           <div class="heart-wrapper">
             <img src="../assets/heart.png" class="big-heart">
-            <div class="count">256</div>
+            <div class="count">0</div>
           </div>
           <div class="title"><p>{{ this.info.title }}</p></div>
         </div>
@@ -28,7 +28,7 @@
       <div class="detail-wrapper">
         <div class="detail-body">
           <img v-for="image in this.info.images" v-bind:key="image.key" :src="`http://54.180.79.49/${image}`" class="post-img">
-            <div class="post-content"><vue-markdown-it :source="this.info.content" /></div>
+            <div class="post-content"><vue-markdown :source="this.info.content"></vue-markdown></div>
           </div>
         </div>
       </div>
@@ -37,13 +37,14 @@
 
 <script>
 import moment from 'moment'
-import VueMarkdownIt from 'vue-markdown-it'
+import VueMarkdown from 'vue-markdown'
 export default {
   name: 'PostDetailBody',
-  components: { VueMarkdownIt },
+  components: { VueMarkdown },
   data () {
     return {
       info: {}
+      // test: '![test](https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-sm.jpg?bust=1536935086)'
     }
   },
   created: function () {
@@ -129,7 +130,8 @@ export default {
 }
 .count {
   font-size: 6px;
-  padding-left: 4%;
+  /* padding-left: -10%; */
+  display: flex;
 }
 .title {
   font-size: 29px;

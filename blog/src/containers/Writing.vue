@@ -2,6 +2,8 @@
   <div class="writing-container">
     <div class="title-container"><input class="title" type="text" placeholder="Title" v-model="title">
       <multi-select class="select" v-on:clicked="log" />
+      <!-- <label for="upload-local">업로드</label> -->
+      <!-- <input type="file" class="upload-local"/> -->
     </div>
     <div class="writing">
       <editor v-model="editorText" height="80vh" class="editor" />
@@ -46,6 +48,7 @@ export default {
       }).catch(function (error) {
         console.log(error)
       })
+      console.log(this.editorText)
     },
     log: function (value) {
       this.value = value
@@ -110,5 +113,8 @@ export default {
 .select {
   align-self: center;
   margin-left: 2%;
+}
+.upload-local {
+  text-decoration: none;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
 <div class="list-container">
   <div class="post-list" v-for="post in posts" v-bind:key="post.key" >
-    <img :src="`http://54.180.79.49/${post.image}`" class="post-img">
+    <!-- <img :src="`http://54.180.79.49/${post.image}`" class="post-img"> -->
     <div class="post-container" >
       <div class="post-title" v-on:click="redirect(post.post_id)"><p class="text-title">{{ post.title }}</p></div>
       <div class="content-container">
-        <p class="post-content">{{ post.content }}</p>
+        <!-- <p class="post-content"><vue-markdown :source="post.content"></vue-markdown></p> -->
         <div class="meta-container">
           <p class="post-meta">{{ formatDate(post.creation_time) }}, {{ post.commentCount }}개</p>
           <div class="heart-container">
@@ -21,8 +21,10 @@
 
 <script>
 import moment from 'moment'
+import VueMarkdown from 'vue-markdown'
 export default {
   name: 'PostList',
+  components: { VueMarkdown },
   data () {
     return {
       posts: [],
@@ -100,7 +102,7 @@ export default {
   flex-wrap: nowrap;
   margin:0 0 0 25px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .post-container {
   flex-direction: column;
@@ -125,6 +127,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+  width: 720px;
 }
 .heart-img {
   width: 20%;

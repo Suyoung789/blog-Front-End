@@ -3,7 +3,7 @@
     <div class="category">
       <div class="category-wrapper">
         <p class="category-header">Category</p>
-        <p class="category-items" v-for="category in categories" v-bind:key="category.id" v-on:click="onClickCategory(category.category_name)">{{ category.category_name}}</p>
+        <div class="category-items" v-for="category in categories" v-bind:key="category.id" v-on:click="onClickCategory(category.category_name)"><p>{{ category.category_name}}</p><div v-on:click="del(category.category_name)">x</div></div>
         <p class="category-items" v-on:click="add = !add">+</p>
         <div class="add-container" v-show="add">
           <input type="text" class="input-name" v-model="name">
@@ -47,6 +47,9 @@ export default {
     },
     onClickCategory: function (category) {
       this.$EventBus.$emit('category', category)
+    },
+    del: function (category) {
+      this.$http.delete('/category/' + category)
     }
   }
 }
@@ -90,6 +93,8 @@ export default {
   font-size: 13px;
   font-weight: 300;
   margin-top: 6%;
+  display: flex;
+  justify-content: space-between;
 }
 .category-items:hover {
   cursor: pointer;
